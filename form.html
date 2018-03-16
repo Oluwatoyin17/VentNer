@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Project1</title>
+    <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--local style sheet-->
+    <!--<link rel="stylesheet" type="text/css" href="./assets/css/style.css">-->
+
+    <!--RESET?-->
+ </head>
+
+ <body>
+-    
+-    <script></script>
+    <div class="container" id="body-container">
+        <div class="row" id="header-row">
+            <!--Header (maybe login) go here-->
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <button class="btn btn-lg" id="Start-button">Host Event</button>
+
+        <div class="container" id="search-field-container">
+
+            <label for="business-buttons">Is your event Business or Personal?</label>
+            <div class="row" id="business-buttons">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="event-business" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Business</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="event-business" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Personal</label>
+                </div>
+            </div>
+
+            <label for="privacy-buttons">Is your Event Public or Private?</label>
+            <div class="row" id="privacy-buttons">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="event-privacy" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Public</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="event-privacy" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Private</label>
+                </div>
+            </div>
+
+            <div class="row" id="event-dropdown">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>These options will</option>
+                        <option value="1">change based on</option>
+                        <option value="2">the style of </option>
+                        <option value="3">event selected</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" id="expected-turnout">
+                <!--this could be either a blank input box or 
+                    a rolling selection.-->
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="row" id="event-date">
+                <!---->
+                <div class="form-group row">
+                    <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
+                    <div class="col-10">
+                        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="row" id="zip-code">
+                <!--Zip code (needs validation)-->
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Postal code</label>
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" name="postalCode" />
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+            <button class="btn btn-lg" id="finish-button">Search for Venue!</button>
+        </div>
+        <div class="container" id="results-container">
+            <div class="row" id="weather-data">
+                <!--put specific weather data here-->
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="row" id="venue-data">
+                <!--put search results here-->
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Firebase?-->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- local javascript file-->
+    <!--<script src="./assets/javascript/app.js"></script>-->
+ </body>
+
+ </html> 
