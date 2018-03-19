@@ -22,13 +22,11 @@ input[type=text], input[type=password] {
     border: none;
     background: #f1f1f1;
 }
-
 /* Add a background color when the inputs get focus */
 input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
 }
-
 /* Set a style for all buttons */
 button {
     background-color: #4CAF50;
@@ -40,28 +38,23 @@ button {
     width: 100%;
     opacity: 0.9;
 }
-
 button:hover {
     opacity:1;
 }
-
 /* Extra styles for the cancel button */
 .cancelbtn {
     padding: 14px 20px;
     background-color: #f44336;
 }
-
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .signupbtn {
   float: left;
   width:40%;
 }
-
 /* Add padding to container elements */
 .container {
     padding: 16px;
 }
-
 /* The Modal (background) */
 .modal {
     
@@ -76,7 +69,6 @@ button:hover {
     background-color: #474e5d;
     padding-top: 50px;
 }
-
 /* Modal Content/Box */
 .modal-content {
     /* background-color: #fefefe; */
@@ -84,7 +76,6 @@ button:hover {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
 }
-
 /* Style the horizontal ruler */
 hr {
     width:80%;
@@ -102,13 +93,11 @@ hr {
     font-weight: bold;
     color: #f1f1f1;
 }
-
 .close:hover,
 .close:focus {
     color: #f44336;
     cursor: pointer;
 }
-
 /* Clear floats */
 .clearfix::after {
     content: "";
@@ -118,7 +107,18 @@ hr {
 .jumbotron {
     text-align: center;
 }
-
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:lightgreen;
+    color:teal;
+    text-align: center;
+    opacity: 0.7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+} 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
     .cancelbtn, .signupbtn {
@@ -184,7 +184,9 @@ hr {
             </div>
           </form>
         </div>
-      
+    <div class="text-center">
+        <div class="footer"> &copyCopyright 2018 Alan, Fletcher, Jamie, Oluwatoyin, Paul</div> 
+    </div>
         
         <script>
         // Get the modal
