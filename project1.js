@@ -3,7 +3,7 @@
 $("#finish-button").on("click", function (event){
 	event.preventDefault();
 
-	var zipCode= $("#zip-code").val().trim();
+	var zipCode= $("#zipCode").val().trim();
 	var longitude;
 	var latitude;
 	var apiArray = [
@@ -23,7 +23,7 @@ $("#finish-button").on("click", function (event){
 	//for(i = 0; i < apiArray.length;i++){
 		
 		//var APIKey = apiArray[i];
-		//console.log(queryArray[i]);
+		console.log(queryArray[0]);
 		//var queryURL = queryArray[i];
 		
 		$.ajax({
