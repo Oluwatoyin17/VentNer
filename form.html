@@ -24,9 +24,8 @@
                             <a class="navbar-brand" href="#">VentNer</a>
                         </div>
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="./home.html">Home</a></li>
+                            <li class="active"><a href="./index.html">Home</a></li>
                             <li><a href="./form.html">Form</a></li>
-                            <li><a href="#">Page 2</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="./SignUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -45,47 +44,36 @@
             <br>
         </div>
 
-        <button class="btn btn-lg" id="Start-button">Host Event</button>
+        <h3>Host Your Event</h3>
+        <br>
+        <h1>Filter your venue search</h1>
+        <form action="/action_page.php" method="get">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="checkbox" name="venue" value="School">School<br>
+                    <input type="checkbox" name="venue" value="Church">Church<br>
+                    <input type="checkbox" name="venue" value="Theater">Theater<br>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="venue" value="Club">Club<br>
+                    <input type="checkbox" name="venue" value="Concert Hall">Concert Hall<br>
+                    <input type="checkbox" name="venue" value="Opera House">Opera House<br>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="venue" value="Stadium">Stadium<br>
+                    <input type="checkbox" name="venue" value="Amphitheater">Amphiteater<br>
+                    <input type="checkbox" name="venue" value="Park">Park<br>
+                </div>
+              </div>
 
-        <div class="container" id="search-field-container">
 
-            <label for="business-buttons">Is your event Business or Personal?</label>
-            <div class="row" id="business-buttons">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="event-business" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">Business</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="event-business" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Personal</label>
-                </div>
-            </div>
-
-            <label for="privacy-buttons">Is your Event Public or Private?</label>
-            <div class="row" id="privacy-buttons">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="event-privacy" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">Public</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="event-privacy" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Private</label>
-                </div>
-            </div>
-
-            <div class="row" id="event-dropdown">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
-                    </div>
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>These options will</option>
-                        <option value="1">change based on</option>
-                        <option value="2">the style of </option>
-                        <option value="3">event selected</option>
-                    </select>
-                </div>
-            </div>
+          </form>
+          <br>
+          <h2>Would you like to see the weather conditions for the day of your event?</h2>
+          <form action="/action_page.php" method="get">
+            <input type="checkbox" name="weather" value="Yes">Yes<br>
+            <input type="checkbox" name="weather" value="No">No<br>
+            
             <div class="row" id="expected-turnout">
                 <!--this could be either a blank input box or 
                     a rolling selection.-->
@@ -95,10 +83,10 @@
             </div>
             <div class="row" id="event-date">
                 <!---->
-                <div class="form-group row">
+                <div class="form-group">
                     <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
                     <div class="col-10">
-                        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                        <input class="form-control" type="datetime-local" value="2018-06-19T13:45:00" id="example-datetime-local-input">
                     </div>
                 </div>
                 <br>
@@ -108,9 +96,9 @@
             <div class="row" id="zip-code">
                 <!--Zip code (needs validation)-->
                 <div class="form-group">
-                    <label class="col-xs-3 control-label">Postal code</label>
-                    <div class="col-xs-5">
-                        <input type="text" class="form-control" name="postalCode" id="zipCode" />
+                    <label class="col-2 control-label">Postal code</label>
+                    <div class="col-10">
+                        <input type="text" class="form-control" name="postalCode" id="zipCode">
                     </div>
                 </div>
                 <br>

@@ -1,8 +1,10 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+body {font-family: Arial, Helvetica, sans-serif;
+    background-color: 	rgb(224,224,224);
+}
 * {box-sizing: border-box}
 /* Full-width input fields */
 input[type=text], input[type=password] {
-    width: 80%;
+    width: 20%;
     padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
@@ -104,6 +106,7 @@ hr {
 }
 .jumbotron {
     text-align: center;
+    background-color: 	rgb(224,224,224);
 }
 .remember {
     float: left;
@@ -123,6 +126,7 @@ hr {
     height:400px;
     margin-bottom: 20px;
     margin-right: 20px;
+    width: 90%;
 }
 .footer {
     position: fixed;
@@ -132,16 +136,41 @@ hr {
     background-color:lightgreen;
     color:teal;
     text-align: center;
-    opacity: 0.7;
     padding-top: 10px;
     padding-bottom: 10px;
 
 }    
 .row1{
-    /* width: 80%; */
+     /* width: 80%;  */
     justify-content: center;
-    margin-left: 115px;
-    /* margin-right: 100px; */
-    /* height: 800px; */
+    margin-left: 200px;
+     /* margin-right: 100px; */
+     /* height: 800px; */
     width:100%;
 }    
+
+h1, h2{
+    font-size: 35px;
+}
+
+label, .form-control,{
+    margin-left: 30px;
+}
+
+.row{
+    margin-left: 0px;
+}
+h3{
+    font-size: 55px;
+    text-align: center;
+    font-family: Courier New, Courier, monospace;
+    font-weight: bold;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    
+}
+.navbar-brand:hover{
+    color: none;
+}
