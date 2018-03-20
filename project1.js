@@ -1,4 +1,3 @@
-
 // javascript for project one
 
 $("#finish-button").on("click", function (event){
