@@ -15,10 +15,10 @@
             <nav class="navbar navbar-inverse">
               <div class="container-fluid">
                   <div class="navbar-header">
-                      <a class="navbar-brand" href="#">VentNer</a>
+                    <a class="navbar-brand">VentNer</a>
                   </div>
                   <ul class="nav navbar-nav">
-                      <li class="active"><a href="./index.html">Home</a></li>
+                      <li><a href="./index.html">Home</a></li>
                       <li><a href="./form.html">Form</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
@@ -29,12 +29,12 @@
           </nav>
   
           <!-- </nav> -->
-       
+        <div class = "setup">
 
-        <h2>Login Form</h2>
+            <h1>Login Form</h1>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+        </div>
 <div id="id01" class="modal">
   
   <form class="modal-content animate" action="/action_page.php">
@@ -42,7 +42,7 @@
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="./assets/img/img_avatar2.png" alt="Avatar" class="avatar">
     </div>
-
+    
     <div class="container">
       <label for="uname"><b>Username</b></label>
       <br>
@@ -60,9 +60,6 @@
       <br>
       <button type="submit" class="signupbtn">Login</button>
      
-    
-
-    
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       <br>
     
@@ -71,19 +68,38 @@
 </div>
 </div>
 <div class="text-center">
-    <div class="footer"> &copyCopyright 2018 Alan, Fletcher, Jamie, Oluwatoyin, Paul</div> 
+    <div class="footer"> &copyCopyright 2018 Alan, Fletcher, Oluwatoyin, Paul</div> 
 </div>
  
 
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBo2Z60mRFLbaAg4CWy2xyQ9r5NfLCSxXw",
+            authDomain: "project1-9f5cd.firebaseapp.com",
+            databaseURL: "https://project1-9f5cd.firebaseio.com",
+            projectId: "project1-9f5cd",
+            storageBucket: "",
+            messagingSenderId: "355840616817"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </script>
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="./project1.js"></script>
 </body>
 </html>
