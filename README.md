@@ -1,4 +1,4 @@
-# Project1
+# VentNer
 This is a web application that searches and compiles list of criteria specific venues to host event and verify suitable weather conditions based on forecast and historical data.
 
 The website take the users input fields for:date available, location, party size, price range, necessary accomodations, and acceptable weather conditions
