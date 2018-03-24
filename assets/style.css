@@ -123,6 +123,15 @@ hr {
        width: 100%;
     }
 }
+@media screen and (max-width: 500px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+    .row1{
+        justify-content: center;
+        width:100%;
+    }   
+}
 .column, img{
     float:left;
     height:400px;
