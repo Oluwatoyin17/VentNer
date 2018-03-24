@@ -48,21 +48,21 @@
         <br>
         <h1>Filter your venue search</h1>
         <form action="/action_page.php" method="get">
-            <div class="row">
+            <div class="row" id="checkboxDiv">
                 <div class="col-md-4">
-                    <input type="checkbox" name="venue" value="School">School<br>
-                    <input type="checkbox" name="venue" value="Church">Church<br>
-                    <input type="checkbox" name="venue" value="Theater">Theater<br>
+                    <input class="checkBox" type="checkbox" name="venue" value="Church">Church<br>
+                    <input class="checkBox" type="checkbox" name="venue" value="Theater">Theater<br>
+                    <input class="checkBox" type="checkbox" name="venue" value="School">School<br>
                 </div>
                 <div class="col-md-4">
-                    <input type="checkbox" name="venue" value="Club">Club<br>
-                    <input type="checkbox" name="venue" value="Concert Hall">Concert Hall<br>
-                    <input type="checkbox" name="venue" value="Opera House">Opera House<br>
+                    <input class="checkBox" type="checkbox" name="venue" value="Club">Club<br>
+                    <input class="checkBox" type="checkbox" name="venue" value="Concert Hall">Concert Hall<br>
+                    <input class="checkBox" type="checkbox" name="venue" value="Opera House">Opera House<br>
                 </div>
                 <div class="col-md-4">
-                    <input type="checkbox" name="venue" value="Stadium">Stadium<br>
-                    <input type="checkbox" name="venue" value="Amphitheater">Amphiteater<br>
-                    <input type="checkbox" name="venue" value="Park">Park<br>
+                    <input class="checkBox" type="checkbox" name="venue" value="Amphitheater">Amphiteater<br>
+                    <input class="checkBox" type="checkbox" name="venue" value="Stadium">Stadium<br>
+                    <input class="checkBox" type="checkbox" name="venue" value="Park">Park<br>
                 </div>
               </div>
 
@@ -71,8 +71,8 @@
           <br>
           <h2>Would you like to see the weather conditions for the day of your event?</h2>
           <form action="/action_page.php" method="get">
-            <input type="checkbox" name="weather" value="Yes">Yes<br>
-            <input type="checkbox" name="weather" value="No">No<br>
+            <input type="radio" name="weather" value="Yes">Yes<br>
+            <input type="radio" name="weather" value="No">No<br>
             
             <div class="row" id="expected-turnout">
                 <!--this could be either a blank input box or 
@@ -129,6 +129,20 @@
 
 
     <!--Firebase?-->
+    
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBo2Z60mRFLbaAg4CWy2xyQ9r5NfLCSxXw",
+    authDomain: "project1-9f5cd.firebaseapp.com",
+    databaseURL: "https://project1-9f5cd.firebaseio.com",
+    projectId: "project1-9f5cd",
+    storageBucket: "project1-9f5cd.appspot.com",
+    messagingSenderId: "355840616817"
+  };
+  firebase.initializeApp(config);
+</script>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
