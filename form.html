@@ -21,10 +21,10 @@
             <nav class="navbar navbar-inverse">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="#">VentNer</a>
+                            <a class="navbar-brand">VentNer</a>
                         </div>
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li><a href="./index.html">Home</a></li>
                             <li><a href="./form.html">Form</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -46,7 +46,7 @@
 
         <h3>Host Your Event</h3>
         <br>
-        <h1>Filter your venue search</h1>
+        <h2>Filter your venue search</h2>
         <form action="/action_page.php" method="get">
             <div class="row" id="checkboxDiv">
                 <div class="col-md-4">
@@ -69,7 +69,7 @@
 
           </form>
           <br>
-          <h2>Would you like to see the weather conditions for the day of your event?</h2>
+          <h4>Would you like to see the weather conditions for the day of your event?</h4>
           <form action="/action_page.php" method="get">
             <input type="radio" name="weather" value="Yes">Yes<br>
             <input type="radio" name="weather" value="No">No<br>
@@ -78,32 +78,24 @@
                 <!--this could be either a blank input box or 
                     a rolling selection.-->
                 <br>
-                <br>
-                <br>
             </div>
             <div class="row" id="event-date">
                 <!---->
                 <div class="form-group">
-                    <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
+                    <label for="example-datetime-local-input" class="col-2 col-form-label"><h2>Date and time</h2></label>
                     <div class="col-10">
                         <input class="form-control" type="datetime-local" value="2018-06-19T13:45:00" id="example-datetime-local-input">
                     </div>
                 </div>
-                <br>
-                <br>
-                <br>
             </div>
             <div class="row" id="zip-code">
                 <!--Zip code (needs validation)-->
                 <div class="form-group">
-                    <label class="col-2 control-label">Postal code</label>
+                    <label class="col-2 control-label"><h2>Postal code</h2></label>
                     <div class="col-10">
                         <input type="text" class="form-control" name="postalCode" id="zipCode">
                     </div>
                 </div>
-                <br>
-                <br>
-                <br>
             </div>
             <button class="btn btn-lg" id="finish-button">Search for Venue!</button>
         </div>
@@ -123,7 +115,7 @@
         </div>
     </div>
     <div class="text-center">
-        <div class="footer"> &copyCopyright 2018 Alan, Fletcher, Jamie, Oluwatoyin, Paul</div> 
+        <div class="footer"> &copyCopyright 2018 Alan, Fletcher, Oluwatoyin, Paul</div> 
     </div>
   
 
