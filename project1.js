@@ -128,9 +128,7 @@ $("#submit").on("click", function (event) {
 
 	event.preventDefault();
 
-
 	var address = $("#address").val().trim();
-
 	var longitude;
 	var latitude;
 	var apiArray = [
