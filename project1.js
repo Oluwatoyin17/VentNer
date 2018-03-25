@@ -123,11 +123,17 @@ $('#id01').on('shown.bs.modal', function () {
 });
 
 //whenever "submit search" button is clicked...
-$("#finish-button").on("click", function (event) {
+
+$("#submit").on("click", function (event) {
+
 	event.preventDefault();
 
+<<<<<<< HEAD
 	//store the values for the form...
 	var zipCode = $("#zipCode").val().trim();
+=======
+	var address = $("#address").val().trim();
+>>>>>>> d71954cfbc53595bc8ce38a99437b71c031c6e81
 	var longitude;
 	var latitude;
 	var apiArray = [
@@ -137,7 +143,7 @@ $("#finish-button").on("click", function (event) {
 		//"AIzaSyAOJy5-QBRK20FJ5SsYtPUkb1Urvyt_jy8"
 	];
 	var queryArray = [
-		"https://api.openweathermap.org/data/2.5/weather?zip=" + (zipCode) + "&units=imperial&APPID=" + apiArray[0],
+		"https://api.openweathermap.org/data/2.5/weather?zip=" + (address) + "&units=imperial&APPID=" + apiArray[0],
 		//"https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=" + apiArray[1] , 
 		//"https://api.meetup.com/2/events?key=" + apiArray [2] + "&group_urlname=ny-tech&sign=true" , 
 		//"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&key=" + apiArray[1] , 
@@ -189,6 +195,7 @@ $("#finish-button").on("click", function (event) {
 		// });
 
 	});
+
 
 
 });
