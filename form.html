@@ -1,13 +1,13 @@
 <!DOCTYPE html>
- <html lang="en">
+<html lang="en">
 
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>Project1</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project1</title>
     <!-- Latest compiled and minified CSS -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!--local style sheet-->
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
@@ -15,285 +15,140 @@
     <!--RESET?-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
-    $(document).ready(function(){
-        // type_holder
-        // <div><label><input type="checkbox" class="types" value="mosque" />Mosque</label></div>
-
-        var types = ['amusement_park','aquarium','art_gallery','bar','campground','church','hindu_temple','lodging','mosque','movie_theater','museum','night_club','park','restaurant','school','stadium','synagogue'];
-        var html = '';
-
-        $.each(types, function( index, value ) {
-            var name = value.replace(/_/g, " ");
-            html += '<div><label><input type="checkbox" class="types" value="'+ value +'" />'+ capitalizeFirstLetter(name) +'</label></div>';
-        });
-
-        $('#type_holder').html(html);
-    });
-
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
-    var map;
-    var infowindow;
-    var autocomplete;
-    var countryRestrict = {'country': 'in'};
-    var selectedTypes = [];
-
-    function initialize()
-    {
-        autocomplete = new google.maps.places.Autocomplete((document.getElementById('address')), {
-            types: ['(regions)'],
-           // componentRestrictions: countryRestrict
-        });
-
-        var houston = new google.maps.LatLng(29.8159954, -95.9617495);
-
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: houston,
-            zoom: 10
-        });
-    }
-
-    function renderMap()
-    {
-        // Get the user defined values
-        var address = document.getElementById('address').value;
-        var radius  = parseInt(document.getElementById('radius').value) * 1000;
-        
-        // get the selected type
-        selectedTypes = [];
-        $('.types').each(function(){
-            if($(this).is(':checked'))
-            {
-                selectedTypes.push($(this).val());
-            }
-        });
-
-        var geocoder    = new google.maps.Geocoder();
-        var selLocLat   = 0;
-        var selLocLng   = 0;
-
-        geocoder.geocode({'address': address}, function(results, status) {
-            if (status === 'OK')
-            {
-                //console.log(results[0].geometry.location.lat() + ' - ' + results[0].geometry.location.lng());
-
-                selLocLat   = results[0].geometry.location.lat();
-                selLocLng   = results[0].geometry.location.lng();
-
-                //var houston = new google.maps.LatLng(29.8159954, -95.9617495);
-
-                var houston = new google.maps.LatLng(selLocLat, selLocLng);
-
-                map = new google.maps.Map(document.getElementById('map'), {
-                    center: houston,
-                    zoom: 10
-                });
-
-                //console.log(selectedTypes);
-
-                var request = {
-                    location: houston,
-                    //radius: 5000,
-                    //types: ["atm"]
-                    radius: radius,
-                    types: selectedTypes
-                };
-
-                infowindow = new google.maps.InfoWindow();
-
-                var service = new google.maps.places.PlacesService(map);
-                service.nearbySearch(request, callback);
-            }
-            else
-            {
-                alert('Geocode was not successful for the following reason: ' + status);
-            }
-        });
-    }
-
-    function callback(results, status)
-    {
-        if (status == google.maps.places.PlacesServiceStatus.OK)
-        {
-            for (var i = 0; i < results.length; i++)
-            {
-                createMarker(results[i], results[i].icon);
-                console.log(results[i]);
-            }
-        }
-    }
-
-    function createMarker(place, icon) {
-        var placeLoc = place.geometry.location;
-
-        var marker = new google.maps.Marker({
-            map: map,
-            position: place.geometry.location,
-            icon: {
-                url: icon,
-                scaledSize: new google.maps.Size(20, 20) // pixels
-            },
-            animation: google.maps.Animation.DROP
-        });
-        
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent('Name: '+place.name+ '<br>'+'Address: '+place.vicinity+'<br>'+"Rating: "+place.rating);
-            infowindow.open(map, this);
-        });
-    }
     </script>
-    
- </head>
 
- <body>
-    
-      <!-- <nav class="navbar navbar-dark bg-dark"> -->
-            <!-- Navbar content -->
-            <nav class="navbar navbar-inverse">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <a class="navbar-brand">VentNer</a>
-                        </div>
-                        <ul class="nav navbar-nav">
-                            <li><a href="./index.html">Home</a></li>
-                            <li><a href="./form.html">Form</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                                <li><a href="" id="logout-button" ><span class="glyphicon glyphicon-user"></span> Log out</a></li>
-                            <li><a href="./login.html" id= "login-button" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        </ul>
-                    </div>
-                </nav>
-        
-                <!-- </nav> -->
-  <script></script>
+</head>
+
+<body>
+
+    <!-- <nav class="navbar navbar-dark bg-dark"> -->
+    <!-- Navbar content -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">VentNer</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./form.html">Form</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="" id="logout-button">
+                        <span class="glyphicon glyphicon-user"></span> Log out</a>
+                </li>
+                <li>
+                    <a href="./login.html" id="login-button">
+                        <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- </nav> -->
+    <script></script>
     <div class="container" id="body-container">
         <div class="row" id="header-row">
             <!--Header (maybe login) go here-->
-            
+
         </div>
 
         <h3>Host Your Event</h3>
 
-                </div>
-              </div>
-
-
-          </form>
-        
-         <!-- <h4>Check here for weather conditions:</h4>
-          <form action="/action_page.php" method="get">
-            <input type="radio" name="weather" value="Yes">Yes<br>
-            <input type="radio" name="weather" value="No">No<br>
-            
-            <div class="row" id="expected-turnout">
-                <!--this could be either a blank input box or 
-                    a rolling selection.-->
-            
-            </div>
-            <div class="row" id="event-date">
-                <!-- <div class="form-group">
-                    <label for="example-datetime-local-input" class="col-2 col-form-label"><h2>Date and time</h2></label>
-                    <div class="col-10">
-                        <input class="form-control" type="datetime-local" value="2018-06-19T13:45:00" id="example-datetime-local-input">
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="zip-code">
-                Zip code (needs validation)
-                <div class="form-group">
-                    <label class="col-2 control-label"><h2>Postal code</h2></label>
-                    <div class="col-10">
-                        <input type="text" class="form-control" name="postalCode" id="zipCode">
-                    </div>
-                </div>
-
-        </div>
-        <div class="container" id="results-container">
-                <div class="row" id="weather-data">
-                    <!--put specific weather data here-->
-                   
-                </div>
-                <div class="row" id="venue-data">
-                    <!--put search results here-->
-                    
-                </div>
-            </div>
-        </div>
-    
-        
-        <div style="float: left; width: 400;">
-            <form name="frm_map" id="frm_map">
-                <table>
-                    <tr>
-                        <th>Address</th>
-                        <td>
-                            <input type="text" name="Zip Code" id="address" value="77027">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Radius</th>
-                        <td>
-                            <input type="text" name="radius" id="radius" value="15" placeholder="In mi">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Types</th>
-                        <td>
-                            <div id="type_holder" style="height: 200px; overflow-y: scroll;">
-                                <!-- Dynamic Content -->    
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                        
-                                <input type="button" value="Search for venue" id="submit" onclick="renderMap();">
-                            <input type="reset" value="Reset" id="reset" >
-                        </td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-        <div style="float: left;">
-                <div id="map" style="width:900px; height:500px;"></div>
-            </div>
-        
-        
-
-    <div class="text-center">
-        <div class="footer"> &copyCopyright 2018 Alan, Fletcher, Oluwatoyin, Paul</div> 
     </div>
-  
+
+
+
+
+    <div class="row" id="event-date">
+
+    </div>
+
+
+
+    <div style="float: left; width: 400;">
+        <form name="frm_map" id="frm_map">
+            <table>
+                <tr>
+                    <th>ZIP CODE</th>
+                    <td>
+                        <input type="text" name="Zip Code" id="address" value="77027">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Radius</th>
+                    <td>
+                        <input type="text" name="radius" id="radius" value="15" placeholder="In mi">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Types</th>
+                    <td>
+                        <div id="type_holder" style="height: 200px; overflow-y: scroll;">
+                            <!-- Dynamic Content -->
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+
+                        <input type="button" value="Search for venue" id="submit" onclick="renderMap();">
+                        <input type="reset" value="Reset" id="reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div style="float: left;">
+        <div id="map" style="width:900px; height:500px;"></div>
+    </div>
+    <div class="container" id="results-container">
+        <div class="row" id="weather-data">
+            <!--put specific weather data here-->
+
+        </div>
+        <div class="row" id="venue-data">
+            <!--put search results here-->
+
+        </div>
+
+
+        <div class="text-center">
+            <div class="footer"> &copyCopyright 2018 Alan, Fletcher, Oluwatoyin, Paul</div>
+        </div>
+    </div>
 
 
 
     <!--Firebase?-->
-    
-<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBo2Z60mRFLbaAg4CWy2xyQ9r5NfLCSxXw",
-    authDomain: "project1-9f5cd.firebaseapp.com",
-    databaseURL: "https://project1-9f5cd.firebaseio.com",
-    projectId: "project1-9f5cd",
-    storageBucket: "project1-9f5cd.appspot.com",
-    messagingSenderId: "355840616817"
-  };
-  firebase.initializeApp(config);
-</script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBo2Z60mRFLbaAg4CWy2xyQ9r5NfLCSxXw",
+            authDomain: "project1-9f5cd.firebaseapp.com",
+            databaseURL: "https://project1-9f5cd.firebaseio.com",
+            projectId: "project1-9f5cd",
+            storageBucket: "project1-9f5cd.appspot.com",
+            messagingSenderId: "355840616817"
+        };
+        firebase.initializeApp(config);
+    </script>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCASSXlpQJJcJx6PwlqKCPAO89co5Wpyh0&libraries=places&callback=initialize" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCASSXlpQJJcJx6PwlqKCPAO89co5Wpyh0&libraries=places&callback=initialize"
+        async defer></script>
     <!-- local javascript file-->
     <!--<script src="./assets/javascript/app.js"></script>-->
     <script src="./project1.js"></script>
- </body>
+</body>
 
- </html> 
+</html>

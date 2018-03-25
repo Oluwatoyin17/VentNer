@@ -11,43 +11,48 @@
 </head>
 
 <body>
-       
-        <!-- <nav class="navbar navbar-dark bg-dark"> -->
-            <!-- Navbar content -->
-            <nav class="navbar navbar-inverse">
-              <div class="container-fluid">
-                  <div class="navbar-header">
-                    <a class="navbar-brand">VentNer</a>
-                  </div>
-                  <ul class="nav navbar-nav">
-                      <li><a href="./index.html">Home</a></li>
-                      <li><a href="./form.html">Form</a></li>
-                  </ul>
-                  <ul class="nav navbar-nav navbar-right">
-                      <li><a href="" id="logout-button" ><span class="glyphicon glyphicon-user"></span> Log out</a></li>
-                      <li><a href="./login.html" id="login-button" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                  </ul>
-              </div>
-          </nav>
-  
-          <!-- </nav> -->
-        <div class = "setup">
 
-            <h1>Login Form</h1>
-
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    <!-- Navbar content -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">VentNer</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./form.html">Form</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="" id="logout-button">
+                        <span class="glyphicon glyphicon-user"></span> Log out</a>
+                </li>
+                <li>
+                    <a href="./login.html" id="login-button">
+                        <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                </li>
+            </ul>
         </div>
-<!--<<<<<<< dmfletcher
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    </nav>
 
-    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    <!-- </nav> -->
+    <div class="setup">
+
+        <h1>Login Form</h1>
+
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    </div>
     <div id="id01" class="modal">
 
         <form class="modal-content animate" action="/action_page.php">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <img src="./assets/img/img_avatar2.png" alt="Avatar" class="avatar">
+
             </div>
 
             <div class="container">
@@ -55,13 +60,13 @@
                     <b>Username</b>
                 </label>
                 <br>
-                <input type="text" placeholder="Enter Username" name="uname" id="loginName" required>
+                <input type="text" placeholder="Enter Username" id="loginName" name="uname" required>
                 <br>
                 <label for="psw">
                     <b>Password</b>
                 </label>
                 <br>
-                <input type="password" placeholder="Enter Password" name="psw" id="loginPassword" required>
+                <input type="password" placeholder="Enter Password" id="loginPassword" name="psw" required>
                 <br>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -71,10 +76,7 @@
                     <a href="#">password?</a>
                 </span>
                 <br>
-                <button id="loginBtn" type="submit" class="signupbtn">Login</button>
-
-
-
+                <button type="submit" id="loginBtn" class="signupbtn">Login</button>
 
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                 <br>
@@ -82,46 +84,12 @@
             </div>
         </form>
     </div>
-=======-->
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="./assets/img/img_avatar2.png" alt="Avatar" class="avatar">
-
+    <div class="text-center">
+        <div class="footer"> &copyCopyright 2018 Alan, Fletcher, Oluwatoyin, Paul</div>
     </div>
-    
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <br>
-      <input type="text" placeholder="Enter Username" id="loginName" name="uname" required>
-      <br>
-      <label for="psw"><b>Password</b></label>
-      <br>
-      <input type="password" placeholder="Enter Password" id="loginPassword" name="psw" required>
-      <br>
-         <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label> 
-      <br>
-       <span class="psw">Forgot <a href="#">password?</a></span>
-      <br>
-      <button type="submit" id="loginBtn" class="signupbtn">Login</button>
-     
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <br>
-    
-    </div>
-  </form>
-</div>
-</div>
-<div class="text-center">
-    <div class="footer"> &copyCopyright 2018 Alan, Fletcher, Oluwatoyin, Paul</div> 
-</div>
- 
 
-<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
     <script>
         // Initialize Firebase
@@ -139,6 +107,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--local JavaScript-->
     <script src="./project1.js"></script>
 
 </body>
