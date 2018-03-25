@@ -50,8 +50,8 @@ $("#loginBtn").on("click", function () {
 				//and against a found-user's password
 				if (loginPassword === userArray[i].password) {
 					console.log("you are logged in");
-					localLogin();
 					userLocal = userArray[i];
+					localLogin();
 					amILoggedIn();
 				} else {
 					console.log("PASSWORD INCORRECT")
@@ -59,8 +59,11 @@ $("#loginBtn").on("click", function () {
 				break;
 		}
 	}
-	//TODO: log out
 });
+//log out
+$("#logout-button").on("click" , function(){
+	sessionStorage.clear();
+})
 //whenever sign up button is clicked...
 $("#signUp").on("click", function () {
 	event.preventDefault();
