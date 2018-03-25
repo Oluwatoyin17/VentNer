@@ -128,12 +128,9 @@ $("#submit").on("click", function (event) {
 
 	event.preventDefault();
 
-<<<<<<< HEAD
-	//store the values for the form...
-	var zipCode = $("#zipCode").val().trim();
-=======
+
 	var address = $("#address").val().trim();
->>>>>>> d71954cfbc53595bc8ce38a99437b71c031c6e81
+
 	var longitude;
 	var latitude;
 	var apiArray = [
