@@ -176,7 +176,7 @@
         </div>
 
         <h3>Host Your Event</h3>
-      
+
                 </div>
               </div>
 
@@ -185,8 +185,8 @@
         
          <!-- <h4>Check here for weather conditions:</h4>
           <form action="/action_page.php" method="get">
-            <input type="checkbox" name="weather" value="Yes">Yes<br>
-            <input type="checkbox" name="weather" value="No">No<br>
+            <input type="radio" name="weather" value="Yes">Yes<br>
+            <input type="radio" name="weather" value="No">No<br>
             
             <div class="row" id="expected-turnout">
                 <!--this could be either a blank input box or 
@@ -209,7 +209,7 @@
                         <input type="text" class="form-control" name="postalCode" id="zipCode">
                     </div>
                 </div>
-            </div> 
+
         </div>
         <div class="container" id="results-container">
                 <div class="row" id="weather-data">
@@ -270,19 +270,21 @@
   
 
 
-    <!--Firebase-->
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+    <!--Firebase?-->
+    
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 <script>
- // Initialize Firebase
- var config = {
-   apiKey: "AIzaSyBo2Z60mRFLbaAg4CWy2xyQ9r5NfLCSxXw",
-   authDomain: "project1-9f5cd.firebaseapp.com",
-   databaseURL: "https://project1-9f5cd.firebaseio.com",
-   projectId: "project1-9f5cd",
-   storageBucket: "project1-9f5cd.appspot.com",
-   messagingSenderId: "355840616817"
- };
- firebase.initializeApp(config);
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBo2Z60mRFLbaAg4CWy2xyQ9r5NfLCSxXw",
+    authDomain: "project1-9f5cd.firebaseapp.com",
+    databaseURL: "https://project1-9f5cd.firebaseio.com",
+    projectId: "project1-9f5cd",
+    storageBucket: "project1-9f5cd.appspot.com",
+    messagingSenderId: "355840616817"
+  };
+  firebase.initializeApp(config);
 </script>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

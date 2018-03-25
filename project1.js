@@ -105,7 +105,9 @@ $('#id01').on('shown.bs.modal', function () {
 })
 
 //whenever "submit search" button is clicked...
+
 $("#submit").on("click", function (event) {
+
 	event.preventDefault();
 	//store the values for the form...
 
@@ -170,6 +172,7 @@ $("#submit").on("click", function (event) {
 		// });
 
 	});
+
 
 
 });

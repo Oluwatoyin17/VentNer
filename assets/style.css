@@ -119,9 +119,63 @@ hr {
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
+    html, body {
+        overflow-x: hidden;
+    }
     .cancelbtn, .signupbtn {
        width: 100%;
     }
+    .responsive {
+        max-width: 100% !important;
+        height: auto !important;
+        width: 400px !important;
+    }
+    .row1 {
+        margin-left: 20px !important;
+    }
+    .button {
+        width: 100px;
+    }
+    .avatar {
+        max-width: 100%;
+        height: auto;
+    }
+    .btn-lg {
+        padding-left: 5px;
+        padding-right: 150px;
+        white-space: nowrap;
+    }
+    .col-10 {
+        width: 675px;
+    }
+    .login {
+        width: 700px;
+    }
+    
+}
+@media screen and (max-width: 500px){
+    html, body{
+        overflow-x: hidden;
+    }
+    .cancelbtn, .signupbtn {
+        width: 100%;
+     }
+     .responsive {
+         max-width: 100% !important;
+         height: auto !important;
+         width: 400px !important;
+     }
+     .row1 {
+         margin-left: 20px !important;
+     }
+     .btn-lg {
+         padding-left: 5px;
+         padding-right: 150px;
+         white-space: nowrap;
+     }
+     .col-10 {
+         width: 675px;
+     }
 }
 .column, img{
     float:left;
@@ -147,7 +201,6 @@ hr {
 .row1{
     justify-content: center;
     margin-left: 200px;
-    width:100%;
 }    
 
 h1{
@@ -203,6 +256,7 @@ h4,h2{
     line-height: 1.1;
     color: inherit;
 }
+
 #reset, #submit{
     background-color: #4CAF50;
     color: white;
@@ -219,7 +273,6 @@ h4,h2{
     padding-left: 30px;
     margin-left: 60px;
     padding-bottom: 60px;
-
 
 }
 
