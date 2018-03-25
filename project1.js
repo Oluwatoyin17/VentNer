@@ -7,38 +7,58 @@ var modal = document.getElementById('id01');
 //
 var userArray = [];
 var userNameArray = [];
+var userLocal = [];
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
 	if (event.target == modal) {
 		modal.style.display = "none";
 	}
 }
+//log in information put in local storage
+function localLogin() {
+	// Clear sessionStorage
+	sessionStorage.clear();
+
+	// Store all content into sessionStorage
+	sessionStorage.setItem("name", userLocal.name);
+	sessionStorage.setItem("email", userLocal.email);
+	sessionStorage.setItem("pass", userLocal.password);
+}
+function amILoggedIn(){
+	if (sessionStorage){
+		$("#login-button").html(sessionStorage.name);
+		console.log(sessionStorage.name);
+	}
+}
+amILoggedIn();
 //whenever the login button is clicked...
 $("#loginBtn").on("click", function () {
 	event.preventDefault();
 	//declare vars from form....
-	var loginName = $("#loginName").val();
+	var userName = $("#loginName").val();
 	var loginPassword = $("#loginPassword").val();
 
 
 	//for each user in the user Array....
 	for (i = 0; i < userArray.length; i++) {
 		console.log(userArray[i].name);
-		console.log(loginName);
+		console.log(userName);
 		//check the login name....
-		switch (loginName) {
+		switch (userName) {
 			//against each user name in user array....
 			case userArray[i].name:
 				//and against a found-user's password
 				if (loginPassword === userArray[i].password) {
 					console.log("you are logged in");
+					localLogin();
+					userLocal = userArray[i];
+					amILoggedIn();
 				} else {
 					console.log("PASSWORD INCORRECT")
 				}
 				break;
 		}
 	}
-	//TODO: if logged in, store venue searches
 	//TODO: log out
 });
 //whenever sign up button is clicked...
@@ -50,31 +70,34 @@ $("#signUp").on("click", function () {
 	var password = $("#password").val() == undefined ? '' : $("#password").val().trim();
 	var repeatPassword = $("#passwordRepeat").val() == undefined ? '' : $("#passwordRepeat").val().trim();
 	var nameIsUnique = false;
+
 	//if the inputs for password match...
 	if (password === repeatPassword) {
-		//TODO: check if username is unique
 
+		//check if username is unique
 		function checkUserName(name) {
 			console.log(name)
 			return name == userName;
-
 		}
-		function pushToFirebase() {
-			console.log(userNameArray.some(checkUserName));
-
-		}
-		pushToFirebase();
-		if (checkUserName === true){
+		// function authFirebase() {
+		// 	console.log(userNameArray.some(checkUserName));
+		// }
+		//if the user name matches any in firebase
+		if (userNameArray.some(checkUserName)) {
 			alert("username already taken")
-		}else{
-			console.log(userName , userEmail , password);
+
+			//or else if it doesnt match...
+		} else {
+
+			//add user to firebase
 			database.ref().push({
 				name: userName,
 				email: userEmail,
 				password: password,
 				//dateAdded: firebase.database.serverValue.TIMESTAMP
 			});
-
+			localLogin();
+			amILoggedIn();
 		}
 
 	} else {//if the inputs for password do not match...
@@ -85,30 +108,25 @@ $("#signUp").on("click", function () {
 
 //when there is a new entry to the database...
 database.ref().on("child_added", function (childSnapshot) {
-	//log it to the console
+	//add it to the local user array
 	snap = childSnapshot.val();
-	console.log(snap.name);
+	console.log(snap);
 	userArray.push(snap);
 	userNameArray.push(snap.name);
 
 });
 
-// $(".checkBox").on("checked" , function(){
-
-// 	console.log("holyshit!!");
-
-// });
 
 //whenever the "signup" from index is clicked...
 $('#id01').on('shown.bs.modal', function () {
 	$('#myInput').trigger('focus')
-})
+});
 
 //whenever "submit search" button is clicked...
 $("#finish-button").on("click", function (event) {
 	event.preventDefault();
-	//store the values for the form...
 
+	//store the values for the form...
 	var zipCode = $("#zipCode").val().trim();
 	var longitude;
 	var latitude;
@@ -138,20 +156,20 @@ $("#finish-button").on("click", function (event) {
 		url: queryArray[0],
 		method: "GET"
 	}).then(function (response) {
+
 		//pass latitude and longitude values....
-		//console.log(queryURL);
 		console.log(response);
 		longitude = response.coord.lon;
 		latitude = response.coord.lat;
 		console.log(latitude, longitude);
+
 		//Build array of checkbox items....
 		$('#checkboxDiv input:checked').each(function () {
 			checkboxArray.push($(this).val());
 			console.log($(this).val());
 		});
-		//console.log(queryURL);
-		//TODO: display weather data.....
 
+		//TODO: display weather data.....
 		$("#weather-data").html("<div id='cTemp'>" + "Current Temperature: " + response.main.temp + " F </div>");
 		$("#weather-data").append("<div id='cCond'>" + "Current Conditions: " + response.weather["0"].main + "</div>");
 		$("#weather-data").append("<div id='humid'>" + "Humidity: " + response.main.humidity + "</div>");
@@ -164,6 +182,7 @@ $("#finish-button").on("click", function (event) {
 		// }).then(function (response) {
 
 		// 	//TODO: get results from venue checkboxes&
+
 		// 	//TODO: display results on map and as entries
 
 		// 	console.log(response);
