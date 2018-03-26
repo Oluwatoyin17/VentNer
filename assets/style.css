@@ -151,6 +151,11 @@ hr {
     .login {
         width: 700px;
     }
+    #map{
+        max-width: 30% !important ; 
+        height: auto;
+
+    }
     
 }
 @media screen and (max-width: 500px){
@@ -175,6 +180,10 @@ hr {
      }
      .col-10 {
          width: 675px;
+     }
+     #map{
+         max-width: 30% !important ;
+         height: auto;
      }
 }
 .column, img{
@@ -273,6 +282,7 @@ h4,h2{
     padding-left: 30px;
     margin-left: 60px;
     padding-bottom: 60px;
-
+    width: 900px;
+    height: 500px;
 }
 
